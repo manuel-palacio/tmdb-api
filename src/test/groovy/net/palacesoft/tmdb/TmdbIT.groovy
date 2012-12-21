@@ -5,59 +5,67 @@ import org.junit.Test
 
 class TmdbIT {
 
-  def apiKey = System.getProperty("apiKey")
+    def apiKey = System.getProperty("apiKey")
 
-  def tmdbCast = new TmdbCast(apiKey)
+    def tmdbCast = new TmdbCast(apiKey)
 
-  def movieApi = new TmdbMovie(apiKey)
+    def movieApi = new TmdbMovie(apiKey)
 
-  @Test
-  public void castOps() {
+    @Test
+    public void castOps() {
 
-    assert !tmdbCast.getCastForMovie(550).crew.empty
+        assert !tmdbCast.getCastForMovie(550).crew.empty
 
-    assert !tmdbCast.getCastForMovie(550).cast.empty
+        assert !tmdbCast.getCastForMovie(550).cast.empty
 
-    assert !tmdbCast.searchPerson("Brad Pitt").results.empty
-  }
+        assert !tmdbCast.searchPerson("Brad Pitt").results.empty
+    }
 
-  @Test
-  public void movieOps() {
+    @Test
+    public void movieOps() {
 
 
-    assert movieApi.getMovie(550).backdrop_path
+        assert movieApi.getMovie(550).backdrop_path
 
-    assert !movieApi.getAlternativeTitles(550).titles.empty
+        assert !movieApi.getAlternativeTitles(550).titles.empty
 
-    def movies = movieApi.search("Fight Club")
+        def movies = movieApi.search("Fight Club", 1)
 
-    assert !movies*.title.empty
+        assert !movies*.title.empty
 
-    assert !movies*.id.empty
+        assert !movies*.tagline.empty
 
-    assert movies.size() > 0
+        assert !movies*.overview.empty
 
-    assert movieApi.getPosterUrlForSize(550, "w342")
+        assert !movies*.vote_average.empty
 
-    assert !movieApi.getPopular().results.empty
-    assert movieApi.availableBackdropSizes()
-    assert movieApi.availablePosterSizes()
+        assert !movies*.id.empty
 
-    assert !movieApi.getTopRated().results.empty
+        assert movies.size() > 0
 
-    assert !movieApi.getImages(550).backdrops*.file_path.empty
+        assert movieApi.getPosterUrlForSize(550, "w342")
 
-    assert !movieApi.getImages(550).posters*.file_path.empty
+        assert !movieApi.getPopular().results.empty
 
-    assert !movieApi.getKeyWords(550).keywords.empty
+        assert movieApi.availableBackdropSizes()
 
-    assert !movieApi.getUpcoming().results.empty
+        assert movieApi.availablePosterSizes()
 
-    assert !movieApi.getSimilar(550).results.empty
+        assert !movieApi.getTopRated().results.empty
 
-    assert movieApi.getLatest()
+        assert !movieApi.getImages(550).backdrops*.file_path.empty
 
-    assert movieApi.getPosterForSize(550, "w342").length > 0
+        assert !movieApi.getImages(550).posters*.file_path.empty
 
-  }
+        assert !movieApi.getKeyWords(550).keywords.empty
+
+        assert !movieApi.getUpcoming().results.empty
+
+        assert !movieApi.getSimilar(550).results.empty
+
+        assert movieApi.getLatest()
+
+        assert movieApi.getPosterForSize(550, "w342").length > 0
+
+    }
 }

@@ -45,12 +45,12 @@ class TmdbMovie {
     }
   }
 
-  List availableBackdropSizes() {
+  List<String> availableBackdropSizes() {
     Configuration configuration = getConfiguration()
     configuration.images.backdrop_sizes
   }
 
-  List availablePosterSizes() {
+  List<String> availablePosterSizes() {
     Configuration configuration = getConfiguration()
     configuration.images.poster_sizes
   }
@@ -80,7 +80,8 @@ class TmdbMovie {
     mapper.readValue(new URL("""${baseUrl}/${apiVersion}/movie/${movieId}/alternative_titles?api_key=${apiKey}"""), AlternativeTitles.class)
   }
 
-  List search(String query, int noResults = 3) {
+  List<Movie> search(String query, int noResults = 3) {
+      //TODO get movie details
     SearchMovieResult result = mapper.readValue(new URL("""${baseUrl}/${apiVersion}/search/movie?query=${URLEncoder.encode(query, "utf-8")}&api_key=${apiKey}"""),
             SearchMovieResult.class)
 
