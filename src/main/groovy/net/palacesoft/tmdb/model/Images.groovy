@@ -2,10 +2,10 @@ package net.palacesoft.tmdb.model
 
 
 class Images {
-  int id
-  List<Image> backdrops
+    int id
+    List<Image> backdrops
 
-  List<Image> posters
+    List<Image> posters
 
 
 }

@@ -1,6 +1,6 @@
 package net.palacesoft.tmdb.model
 
 class Genre {
-  def id
-  def name
+    def id
+    def name
 }

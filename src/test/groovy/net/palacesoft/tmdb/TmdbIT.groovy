@@ -29,19 +29,18 @@ class TmdbIT {
 
         assert !movieApi.getAlternativeTitles(550).titles.empty
 
-        def movies = movieApi.search("Fight Club", 1)
+        def movie = movieApi.search("Fight Club", 1)[0]
 
-        assert !movies*.title.empty
+        assert movie.title
 
-        assert !movies*.tagline.empty
+        assert movie.tagline
 
-        assert !movies*.overview.empty
+        assert movie.overview
 
-        assert !movies*.vote_average.empty
+        assert movie.vote_average
 
-        assert !movies*.id.empty
+        assert movie.id
 
-        assert movies.size() > 0
 
         assert movieApi.getPosterUrlForSize(550, "w342")
 
