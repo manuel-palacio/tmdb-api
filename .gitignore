@@ -1,5 +1,6 @@
 *.iws
 *.iml
+*.ipr
 *Db.properties
 *Db.script
 .settings
@@ -8,7 +9,6 @@
 eclipse
 stacktrace.log
 target
-.idea
 /plugins
 /web-app/plugins
 /web-app/WEB-INF/classes
