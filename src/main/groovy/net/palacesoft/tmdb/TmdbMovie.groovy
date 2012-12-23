@@ -1,6 +1,7 @@
 package net.palacesoft.tmdb
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import groovyx.gpars.GParsPool
 import net.palacesoft.tmdb.model.*
 import org.apache.commons.io.IOUtils
 
@@ -89,7 +90,9 @@ class TmdbMovie {
             results = results[0..noResults]
         }
 
-        results.collect {getMovie(it.id, expandResults)}
+        GParsPool.withPool {
+            results.collectParallel { getMovie(it.id, expandResults) }
+        }
 
     }
 
