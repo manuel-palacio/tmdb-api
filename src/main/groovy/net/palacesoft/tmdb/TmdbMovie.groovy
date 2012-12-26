@@ -10,7 +10,7 @@ class TmdbMovie {
     private String apiKey
     private String apiVersion
     private String baseUrl = "http://api.themoviedb.org"
-    private ObjectMapper mapper = new ObjectMapper()
+    private static final ObjectMapper mapper = new ObjectMapper()
 
     TmdbMovie(String apiKey, String apiVersion = "3") {
         this.apiKey = apiKey
