@@ -22,13 +22,44 @@ class TmdbIT {
     }
 
     @Test
-    public void movieOps() {
+    public void movies() {
 
 
         assert movieApi.getMovie(550).backdrop_path
 
         assert !movieApi.getAlternativeTitles(550).titles.empty
 
+        assert !movieApi.getPopular().results.empty
+
+        assert !movieApi.getTopRated().results.empty
+
+        assert !movieApi.getKeyWords(550).keywords.empty
+
+        assert !movieApi.getUpcoming().results.empty
+
+        assert !movieApi.getSimilar(550).results.empty
+
+        assert movieApi.getLatest()
+    }
+
+    @Test
+    public void images() {
+        assert movieApi.getPosterUrlForSize(550, "w342")
+
+        assert movieApi.availableBackdropSizes()
+
+        assert movieApi.availablePosterSizes()
+
+        assert !movieApi.getImages(550).backdrops*.file_path.empty
+
+        assert !movieApi.getImages(550).posters*.file_path.empty
+
+        assert movieApi.getPosterForSizeAsBytes(550, "w342").length > 0
+
+    }
+
+    @Test
+    public void search() {
         def movie = movieApi.search("Fight Club", 1)[0]
 
         assert movie.title
@@ -40,31 +71,5 @@ class TmdbIT {
         assert movie.vote_average
 
         assert movie.id
-
-
-        assert movieApi.getPosterUrlForSize(550, "w342")
-
-        assert !movieApi.getPopular().results.empty
-
-        assert movieApi.availableBackdropSizes()
-
-        assert movieApi.availablePosterSizes()
-
-        assert !movieApi.getTopRated().results.empty
-
-        assert !movieApi.getImages(550).backdrops*.file_path.empty
-
-        assert !movieApi.getImages(550).posters*.file_path.empty
-
-        assert !movieApi.getKeyWords(550).keywords.empty
-
-        assert !movieApi.getUpcoming().results.empty
-
-        assert !movieApi.getSimilar(550).results.empty
-
-        assert movieApi.getLatest()
-
-        assert movieApi.getPosterForSize(550, "w342").length > 0
-
     }
 }
