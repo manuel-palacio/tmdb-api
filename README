@@ -2,11 +2,11 @@ Groovy wrapper to access http://docs.themoviedb.apiary.io/
 
 Example:
 
-TmdbMovie tmdbMovie = new TmdbMovie(movieKey)
+`TmdbMovie tmdbMovie = new TmdbMovie(movieKey)
 Movie movie = tmdbMovie.search(node.getProperty("title").toString(), 1)[0]
 
 def movieUrl = "http://www.themoviedb.org/movie/${movie.id}"
 def poster = tmdbMovie.getPosterUrlForSize(movie.id, "w185")
 def rating = movie.vote_average
 def tagLine = movie.tagline
-def overview = movie.overview
+def overview = movie.overview`
