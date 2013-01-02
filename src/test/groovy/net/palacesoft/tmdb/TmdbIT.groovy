@@ -59,7 +59,7 @@ class TmdbIT {
 
         assert !movieApi.getImages(550).posters*.file_path.empty
 
-        assert movieApi.getPosterForSizeAsBytes(550, "w342").length > 0
+        assert movieApi.getPosterForMovieWithSizeAsBytes(550, "w342").length > 0
 
     }
 

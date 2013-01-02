@@ -37,8 +37,8 @@ class TmdbMovie {
         "${image.base_url}${size}${posterPath}"
     }
 
-    byte[] getPosterForSizeAsBytes(int movieId, String size) {
-        def is = new URL(getPosterUrlForSize(movieId, size)).openStream()
+    byte[] getPosterForMovieWithSizeAsBytes(int movieId, String size) {
+        def is = new URL(getPosterUrlForMovieWithSize(movieId, size)).openStream()
         try {
             return IOUtils.toByteArray(is)
         } finally {
