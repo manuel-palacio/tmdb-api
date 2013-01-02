@@ -13,7 +13,7 @@
     <description>Wrapper on top of the REST api for easier access in JVM projects</description>
     <groupId>com.github.manuel-palacio.tmdb</groupId>
     <artifactId>tmdb-api</artifactId>
-    <version>0.1</version>
+    <version>0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
     <url>http://manuel-palacio.github.com/tmdb-api/</url>
 
