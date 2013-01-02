@@ -49,7 +49,7 @@ class TmdbIT {
 
     @Test
     public void images() {
-        assert movieApi.getPosterUrlForSize(550, "w342")
+        assert movieApi.getPosterUrlForMovieWithSize(550, "w342")
 
         assert movieApi.availableBackdropSizes()
 

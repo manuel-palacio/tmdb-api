@@ -27,7 +27,7 @@ class TmdbMovie {
         return movie
     }
 
-    String getPosterUrlForSize(int movieId, String size) {
+    String getPosterUrlForMovieWithSize(int movieId, String size) {
         Movie movie = mapper.readValue(new URL("""${baseUrl}/${apiVersion}/movie/${movieId}?api_key=${apiKey}"""), Movie.class)
         Image image = getConfiguration().images
         String posterPath = movie.poster_path
