@@ -11,7 +11,7 @@
 
     <name>TMDB API</name>
     <description>Wrapper on top of the REST api for easier access in JVM projects</description>
-    <groupId>net.palacesoft.tmdb</groupId>
+    <groupId>com.github.manuel-palacio.tmdb</groupId>
     <artifactId>tmdb-api</artifactId>
     <version>0.4-SNAPSHOT</version>
     <packaging>jar</packaging>
