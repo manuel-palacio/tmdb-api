@@ -2,6 +2,9 @@ package net.palacesoft.tmdb.model
 
 
 class Movie {
+
+    public final static MOVIE_URL = "http://www.themoviedb.org/movie"
+
     boolean adult
     String original_title
     String tagline
@@ -28,4 +31,8 @@ class Movie {
     Images images
     Keywords keywords
     AlternativeTitles alternativeTitles
+
+    String getUrl() {
+        "${MOVIE_URL}/${id}"
+    }
 }

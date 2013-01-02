@@ -1,5 +1,6 @@
 package net.palacesoft.tmdb
 
+import net.palacesoft.tmdb.model.Movie
 import org.junit.Test
 
 
@@ -24,8 +25,11 @@ class TmdbIT {
     @Test
     public void movies() {
 
+        Movie movie = movieApi.getMovie(550)
 
-        assert movieApi.getMovie(550).backdrop_path
+        assert movie.backdrop_path
+
+        assert movie.getUrl()
 
         assert !movieApi.getAlternativeTitles(550).titles.empty
 
@@ -40,6 +44,7 @@ class TmdbIT {
         assert !movieApi.getSimilar(550).results.empty
 
         assert movieApi.getLatest()
+
     }
 
     @Test
