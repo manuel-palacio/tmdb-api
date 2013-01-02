@@ -5,11 +5,19 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
     <name>TMDB API</name>
+    <description>Wrapper on top of the REST api for easier access in JVM projects</description>
     <groupId>net.palacesoft.tmdb</groupId>
-    <artifactId>groovy-tmdb</artifactId>
+    <artifactId>groovy-api</artifactId>
     <version>0.1</version>
     <packaging>jar</packaging>
+    <url>http://manuel-palacio.github.com/tmdb-groovy/</url>
 
     <licenses>
         <license>
@@ -19,8 +27,11 @@
         </license>
     </licenses>
 
+
     <scm>
-        <url>http://svn.apache.org/viewcvs.cgi/maven</url>
+        <connection>scm:git:git@github.com:manuel-palacio/tmdb-groovy.git</connection>
+        <developerConnection>scm:git:git@github.com:manuel-palacio/tmdb-groovy.git</developerConnection>
+        <url>git@github.com:manuel-palacio/tmdb-groovy.git</url>
     </scm>
 
     <properties>
