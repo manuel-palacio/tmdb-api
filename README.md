@@ -12,4 +12,5 @@ def tagLine = movie.tagline
 def overview = movie.overview
 def poster = tmdbMovie.getPosterUrlForMovieWithSize(movie.id, "w185")
 Movies movies = tmdbMovie.getSimilar(movie.id)
+byte[] poster = tmdbMovie.getPosterForMovieWithSizeAsBytes(movie.id, "w342")
 ```
