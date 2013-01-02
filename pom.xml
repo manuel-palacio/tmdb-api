@@ -15,7 +15,7 @@
     <description>Wrapper on top of the REST api for easier access in JVM projects</description>
     <groupId>net.palacesoft.tmdb</groupId>
     <artifactId>groovy-api</artifactId>
-    <version>0.1</version>
+    <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <url>http://manuel-palacio.github.com/tmdb-groovy/</url>
 
