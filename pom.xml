@@ -13,7 +13,7 @@
     <description>Wrapper on top of the REST api for easier access in JVM projects</description>
     <groupId>net.palacesoft.tmdb</groupId>
     <artifactId>tmdb-api</artifactId>
-    <version>0.3</version>
+    <version>0.4-SNAPSHOT</version>
     <packaging>jar</packaging>
     <url>http://manuel-palacio.github.com/tmdb-groovy/</url>
 
