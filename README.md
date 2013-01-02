@@ -10,4 +10,5 @@ def movieUrl = "http://www.themoviedb.org/movie/${movie.id}"
 def poster = tmdbMovie.getPosterUrlForSize(movie.id, "w185")
 def rating = movie.vote_average
 def tagLine = movie.tagline
-def overview = movie.overview```
+def overview = movie.overview
+```
