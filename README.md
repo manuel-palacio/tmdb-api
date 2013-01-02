@@ -4,7 +4,7 @@ Example:
 
 ```groovy
 TmdbMovie tmdbMovie = new TmdbMovie(movieKey)
-Movie movie = tmdbMovie.search(node.getProperty("title").toString(), 1)[0]
+Movie movie = tmdbMovie.search("fight club")[0]
 
 def movieUrl = movie.getUrl()
 def rating = movie.vote_average
