@@ -86,7 +86,7 @@ class TmdbMovie {
                 SearchMovieResult.class)
 
         def results = result.results
-        if (results.size() >= noResults) {
+        if (results.size() > 1 && results.size() >= noResults) {
             results = results[0..noResults]
         }
 

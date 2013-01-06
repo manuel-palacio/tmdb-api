@@ -1,5 +1,8 @@
 package net.palacesoft.tmdb.model
 
+import com.fasterxml.jackson.annotation.JsonIgnore
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+
 
 class Movie {
 
@@ -22,7 +25,7 @@ class Movie {
     float runtime
     int budget
     String backdrop_path
-    String belongs_to_collection
+    @JsonIgnore String belongs_to_collection
     List<Genre> genres
     List<Company> production_companies
     List<Country> production_countries

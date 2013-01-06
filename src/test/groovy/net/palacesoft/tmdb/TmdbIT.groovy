@@ -65,7 +65,7 @@ class TmdbIT {
 
     @Test
     public void search() {
-        def movie = movieApi.search("Fight Club", 1)[0]
+        def movie = movieApi.search("Father of the Bride", 1)[0]
 
         assert movie.title
 
